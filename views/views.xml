@@ -1,0 +1,64 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="boutique_list">
+      <field name="name">Boutique list</field>
+      <field name="model">gestion.boutique</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="adresse"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="boutique_view">
+      <field name="name">Boutique View</field>
+      <field name="model">gestion.boutique</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+              </group>
+              <group>
+                <field name="adresse"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_boutique">
+      <field name="name">Boutique</field>
+      <field name="res_model">gestion.boutique</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="gestion.action_server">
+      <field name="name">gestion server</field>
+      <field name="model_id" ref="model_gestion_gestion"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <menuitem name="Boutique" id="gestion_boutique_menu" parent="gestion_menu_root" action="action_boutique"/>
+
+    <!-- <menuitem name="Menu 2" id="gestion.menu_2" parent="gestion.menu_root"/> -->
+    <!-- actions -->
+    <!-- <menuitem name="List boutique" id="gestion_menu_1_list" parent="gestion_boutique_menu" /> -->
+    <!-- <menuitem name="Server to list" id="gestion" parent="gestion.menu_2" action="gestion.action_server"/> -->
+  </data>
+</odoo>

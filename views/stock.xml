@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="stock_list">
+            <field name="name">Stock liste</field>
+            <field name="model">gestion.stock</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="quantite"/>
+                    <field name="produit"/>
+                    <field name="boutique"/>
+                    <field name="date_stock"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="stock_view">
+            <field name="name">stock</field>
+            <field name="model">gestion.stock</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="quantite"/>
+                    <field name="date_stock"/>
+
+                            </group>
+                            <group>
+                                <field name="produit"/>
+                                <field name="boutique"/>
+            
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_stock">
+            <field name="name">stock</field>
+            <field name="res_model">gestion.stock</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Stock" id="gestion_stock_menu" parent="gestion_menu_root" action="action_stock"/>
+
+
+    </data>
+
+
+</odoo>

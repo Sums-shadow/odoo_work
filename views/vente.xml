@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vente_list">
+            <field name="name">vente liste</field>
+            <field name="model">gestion.vente</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="client_id"/>
+                    <field name="date_vendue"/>
+                    <field name="employe_id"/>
+                     <!-- <field name="boutique_id"/> -->
+
+                    <field name="lignevente_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vente_view">
+            <field name="name">vente</field>
+            <field name="model">gestion.vente</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                            
+                                <!-- <field name="boutique_id"/> -->
+                                <field name="employe_id"/>
+                            </group>
+                            <group>
+                                <field name="client_id"/>
+                                <field name="date_vendue"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Liste des clients">
+
+                                <field name="lignevente_ids">
+                                    <tree editable="bottom">
+                                        <field name="produit_id"/>
+                                        <field name="prix"/>
+                                        <field name="quantite"/>
+                                        <field name="total"/>
+                                    </tree>
+
+                                </field>
+
+                                    <group class="oe_subtotal_footer oe_right">
+                                        <field name="total" class="oe_subtotal_footer_separator"/>
+                                    </group>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_vente">
+            <field name="name">vente</field>
+            <field name="res_model">gestion.vente</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="vente" id="gestion_vente_menu" parent="gestion_menu_root" action="action_vente"/>
+
+
+    </data>
+
+
+</odoo>

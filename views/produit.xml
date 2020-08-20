@@ -1,0 +1,48 @@
+<odoo>
+<data>
+ <record model="ir.ui.view" id="produit_list">
+      <field name="name">Produit liste</field>
+      <field name="model">gestion.produit</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="categorie"/>
+          <field name="prix_unitaire"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="produit_view">
+      <field name="name">produit</field>
+      <field name="model">gestion.produit</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="categorie"/>
+              </group>
+              <group>
+                <field name="prix_unitaire"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_produit">
+      <field name="name">produit</field>
+      <field name="res_model">gestion.produit</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Produit" id="gestion_produit_menu" parent="gestion_menu_root" action="action_produit"/>
+
+
+</data>
+
+
+</odoo>

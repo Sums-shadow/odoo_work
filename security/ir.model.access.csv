@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_boutique,gestion.boutique,model_gestion_boutique,base.group_user,1,1,1,1
+access_gestion_produit,gestion.produit,model_gestion_produit,base.group_user,1,1,1,1
+
+access_gestion_categorie_prod,gestion.categorie.prod,model_gestion_categorie,base.group_user,1,1,1,1
+access_gestion_stock_prod,gestion.stock.prod,model_gestion_stock,base.group_user,1,1,1,1
+access_gestion_client,gestion.client,model_gestion_client,base.group_user,1,1,1,1
+access_gestion_vente,gestion.vente,model_gestion_vente,base.group_user,1,1,1,1
+access_gestion_lignevente,gestion.lignevente,model_gestion_lignevente,base.group_user,1,1,1,1

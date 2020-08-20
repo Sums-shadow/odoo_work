@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="client_list">
+            <field name="name">client liste</field>
+            <field name="model">gestion.client</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                     <field name="sexe"/>
+                      <field name="phone"/>
+                       <field name="street"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="client_view">
+            <field name="name">client</field>
+            <field name="model">gestion.client</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                         <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="sexe"/>
+                                <field name="phone"/>
+                            </group>
+                            <group>
+                                <field name="street"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_client">
+            <field name="name">client</field>
+            <field name="res_model">gestion.client</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Client" id="gestion_client_menu" parent="gestion_menu_root" action="action_client"/>
+
+
+    </data>
+
+
+</odoo>

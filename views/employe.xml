@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+    <record model="ir.ui.view" id="employe_view">
+      <field name="name">employee.form</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='parent_id']" position="after"> 
+                <field name="boutique_id"/>
+
+        </xpath>
+        <xpath expr="//field[@name='parent_id']" position="replace"> 
+                
+
+        </xpath>
+      </field>
+    </record>
+     
+
+    </data>
+
+</odoo>
